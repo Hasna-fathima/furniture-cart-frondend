@@ -30,7 +30,7 @@ const UserSignup = () => {
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
       // Send form data to backend API
-      const response = await axios.post('http://localhost:3000/api/user/signup', values);
+      const response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signup', values);
 
       // Handle successful response
       console.log('Form submitted: ', response.data);

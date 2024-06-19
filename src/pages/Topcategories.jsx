@@ -6,7 +6,7 @@ import '/src/index.css';
   const [Topcategory,setTopCategry]=useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/user/category")
+    fetch("https://furniture-cart-5.onrender.com/api/user/category")
     .then(res=>res.json())
     .then(json=>setTopCategry(json))
   },[])

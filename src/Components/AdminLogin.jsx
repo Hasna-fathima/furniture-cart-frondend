@@ -32,7 +32,7 @@ const Login = () => {
   
       // Try user login
       try {
-        response = await axios.post('http://localhost:3000/api/user/signin', { email, password });
+        response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signin', { email, password });
         if (response.status === 200) {
           console.log('User login successful!');
           navigate('/home');

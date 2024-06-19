@@ -15,7 +15,7 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/user/products');
+            const response = await axios.get('https://furniture-cart-5.onrender.com/api/user/products');
             setProducts(response.data);
             setLoading(false);
         } catch (error) {

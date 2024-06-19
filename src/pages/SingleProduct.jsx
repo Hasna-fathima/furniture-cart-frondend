@@ -21,7 +21,7 @@ const SingleProduct = () => {
 
             try {
                 console.log('Fetching product with ID:', Id); // Debugging: Log the product ID
-                const response = await axios.get(`http://localhost:3000/api/user/product/${Id}`);
+                const response = await axios.get(`https://furniture-cart-5.onrender.com/api/user/product/${Id}`);
                 console.log('Product data:', response.data); // Debugging: Log the response data
                 setProduct(response.data);
                 setLoading(false);
