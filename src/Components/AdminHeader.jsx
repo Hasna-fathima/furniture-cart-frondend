@@ -1,12 +1,13 @@
 import React from 'react';
 import '../index.css'; 
-import { Link } from 'react-router-dom'; // Assuming you're using React Router
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { Link } from 'react-router-dom'; 
+import furniture1 from '../../images/furniture1.jpg'
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 const AdminHeader = () => {
   return (
     <header>
-    <img className="logo" src="images/furniture1.jpg" alt="logo" />
+    <img className="logo" src={furniture1} alt="logo" />
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
           <Link className="navbar-brand nav-link text-warning-emphasis fs-8" to="/">Admin Dashboard</Link>

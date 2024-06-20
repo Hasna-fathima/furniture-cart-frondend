@@ -21,7 +21,7 @@ import '/src/index.css';
 
                 <div className='container d-flex flex-rowgap-3'>
                 <div className="card " style={{ width: "10rem" }}>
-                <ul className='productlist'>
+                <ul className='productlist' style={{listStyle:"none", display:"flex", flexDirection:"row"}}>
                   {
                  Topcategory.map(category =>
                   <li key={category.id}className='category'>

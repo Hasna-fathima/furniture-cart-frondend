@@ -1,4 +1,5 @@
 import '../index.css'
+import homeimage from '../../images/homeimage.jpg'
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
           <button>Shop Now</button>
         </div>
         <div className='imagecontainer'>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqzNSt_lVww64HErsIVqCW8gW-_0EAdhSTcBXSfmaZ-77fErKUh_6_54U4mh-LcR9IJzs&usqp=CAU" alt="Modern Interior Design" />
+          <img src={homeimage} />
         </div>  
       </div>
     </div>

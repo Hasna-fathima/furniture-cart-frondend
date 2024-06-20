@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 
 const SingleProduct = () => {
     const { Id } = useParams();
-    console.log('Product ID from useParams:', Id); // Debugging: Log the product ID
+    console.log('Product ID from useParams:', Id);
 
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -20,9 +20,10 @@ const SingleProduct = () => {
             }
 
             try {
-                console.log('Fetching product with ID:', Id); // Debugging: Log the product ID
+                console.log('Fetching product with ID:', Id);
                 const response = await axios.get(`https://furniture-cart-5.onrender.com/api/user/product/${Id}`);
-                console.log('Product data:', response.data); // Debugging: Log the response data
+                console.log('Product data:', response.data); 
+                if(response.status == 200)
                 setProduct(response.data);
                 setLoading(false);
             } catch (error) {

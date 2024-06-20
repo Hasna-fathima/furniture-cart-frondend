@@ -2,12 +2,13 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../index.css'; 
 import { Link } from 'react-router-dom';
+import furniture1 from '../../images/furniture1.jpg'
 
 function UserHeader() {
   return (
     <div className='container'>
       <header>
-        <img className="logo" src="images/furniture1.jpg" alt="logo" />
+        <img className="logo" src={furniture1} alt="logo" />
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
