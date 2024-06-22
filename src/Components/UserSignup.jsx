@@ -34,7 +34,7 @@ const UserSignup = () => {
 
       // Handle successful response
       console.log('Form submitted: ', response.data);
-      navigate('/user/login')
+      navigate('/login')
 
       // Reset form after successful submission
       resetForm();

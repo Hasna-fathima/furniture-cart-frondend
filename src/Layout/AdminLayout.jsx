@@ -1,14 +1,14 @@
 import React from 'react';
 import AdminHeader from '../Components/AdminHeader';
 import { Outlet } from 'react-router-dom';
-// import Footer from '../Components/Footer';
+import Footer from '../pages/Footer';
 
 function AdminLayout() {
   return (
     <div className='container'>
       <AdminHeader />
       <Outlet />
-      {/* <Footer /> */}
+       <Footer /> 
     </div>
   );
 }

@@ -5,6 +5,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+    align-items: center;
     
   }
   
@@ -16,6 +17,7 @@
     display: block;
     font-weight: bold;
     padding: 0.5rem;
+    color:rgba(110, 83, 62, 0.63) ;
   }
   
   input[type='text'],
@@ -38,11 +40,7 @@
     background-color:rgba(110, 83, 62, 0.63) ;
     color: #fff;
     cursor: pointer;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    
-    
+    align-items: center; 
   }
   
   button:hover {

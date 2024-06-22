@@ -20,7 +20,7 @@ const Login = () => {
   
       // Try admin login
       try {
-        response = await axios.post('http://localhost:3000/api/user/admin/signin', { email, password });
+        response = await axios.post('https://furniture-cart-5.onrender.com/api/user/admin/signin', { email, password });
         if (response.status === 200 && response.data.user.role === 'admin') {
           console.log('Admin login successful!');
           navigate('/admin/home');
@@ -35,7 +35,7 @@ const Login = () => {
         response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signin', { email, password });
         if (response.status === 200) {
           console.log('User login successful!');
-          navigate('/home');
+          navigate('/');
           return;
         } else {
           throw new Error('Invalid login credentials');

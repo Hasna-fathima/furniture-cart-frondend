@@ -12,7 +12,9 @@ import NotFound from './pages/NotFound';
 import Products from "./pages/products";
 import SingleProduct from './pages/SingleProduct'
 import Topcategories from "./pages/Topcategories";
-
+import AboutUs from "./pages/Aboutus";
+import Contactus from './pages/Contactus'
+import ProductsByCategory from './pages/productbycategoris'
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +27,7 @@ const router = createBrowserRouter([
         element: <LoginForm />
       },
       {
-        path: "home",
+        path: "/",
         element: <Home />
       },
       {
@@ -37,13 +39,26 @@ const router = createBrowserRouter([
         element:<Products/>
       },
       {
-        path:'singlrproduct/:Id',
+        path:'singleproduct/:Id',
         element:<SingleProduct/>
       },
       {
         path:'category',
         element:<Topcategories/>
+      },
+      {
+        path:'aboutus',
+        element:<AboutUs/>
+      },
+      {
+        path:"contact",
+        element:<Contactus/>
+      },
+      {
+        path:'productbycategory',
+        element:<ProductsByCategory/>
       }
+    
     ]
   },
   {

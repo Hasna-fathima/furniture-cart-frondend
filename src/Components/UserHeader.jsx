@@ -17,7 +17,7 @@ function UserHeader() {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link text-warning-emphasis fs-8" to="/home">Home</Link>
+                  <Link className="nav-link text-warning-emphasis fs-8" to="/">Home</Link>
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link text-warning-emphasis fs-8" to='/products'>Products</Link>
@@ -27,14 +27,14 @@ function UserHeader() {
                     Categories
                   </Link>
                   <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><Link className="dropdown-item" to="#">Sofas</Link></li>
-                    <li><Link className="dropdown-item" to="#">Arrmchairs</Link></li>
-                    <li><Link className="dropdown-item" to="#">Chairs</Link></li>
-                    <li><Link className="dropdown-item" to="#">Tables</Link></li>
-                    <li><Link className="dropdown-item" to="#">BookCases</Link></li>
-                    <li><Link className="dropdown-item" to="#">Highboards</Link></li>
-                    <li><Link className="dropdown-item" to="#">Beds</Link></li>
-                    <li><Link className="dropdown-item" to="#">Wardrobes</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Sofas</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Arrmchairs</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Chairs</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Tables</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">BookCases</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Highboards</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Beds</Link></li>
+                    <li><Link className="dropdown-item" to="/productbycategory">Wardrobes</Link></li>
                     <li><hr className="dropdown-divider" /></li>
                   </ul>
                 </li>
