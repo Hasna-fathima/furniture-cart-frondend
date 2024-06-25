@@ -306,9 +306,8 @@ const SingleProduct = () => {
     </div>
   </div>
 </section>
-        </div>
-    );
-};
-
-export default SingleProduct;
+</div>
+    )
+}
+export default SingleProduct
 

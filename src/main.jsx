@@ -15,14 +15,14 @@ import Topcategories from "./pages/Topcategories";
 import AboutUs from "./pages/Aboutus";
 import ContactUs from "./pages/Contactus";
 import ProductsByCategory from '../src/pages/productbycategoris'
-import  OrderPage from "./pages/Order";
+import OrderPage from "./pages/Order";
 import Ordercompletepage from "./pages/ordercompletepage";
 import ShowCartPage from "./pages/showcart";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <UserLayout />,
+    element: <UserLayout/>,
     errorElement: <NotFound />,
     children: [
       {
