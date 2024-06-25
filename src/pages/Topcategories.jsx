@@ -8,7 +8,7 @@ function Topcategories() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/user/category');
+        const response = await axios.get('https://furniture-cart-5.onrender.com/api/user/category');
         setCategories(response.data);
       } catch (error) {
         console.error('Error fetching categories:', error);

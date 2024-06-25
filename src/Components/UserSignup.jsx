@@ -27,7 +27,7 @@ const UserSignup = () => {
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/user/signup', values);
+      const response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signup', values);
 
       if (response.status === 201) {
         console.log('User signed up successfully!');

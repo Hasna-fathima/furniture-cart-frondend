@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../index.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineLocalShipping } from "react-icons/md";
 import { CgSupport } from "react-icons/cg";
 import { CiShoppingBasket } from "react-icons/ci";
 import { MdAssignmentReturn } from "react-icons/md";
 
-
-
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetchProducts(); // Fetch products when the component mounts
@@ -20,9 +19,18 @@ const Products = () => {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/user/products');
-            setProducts(response.data);
-            setLoading(false);
+            const userId= localStorage.getItem('userId');
+            if (userId) {
+                const response = await axios.get('https://furniture-cart-5.onrender.com/api/user/products', {
+                    headers: {
+                        'Authorization': `Bearer ${userId}`
+                    }
+                });
+                setProducts(response.data);
+                setLoading(false);
+            } else {
+                navigate('/login');
+            }
         } catch (error) {
             console.error('Error fetching products:', error);
             setError(error.message);
@@ -39,9 +47,7 @@ const Products = () => {
     }
 
     return (
-       
         <div className='container'>
-    
             <div className='grid-container'>
                 {products.map((product) => (
                     <div key={product._id} className='card'>
@@ -63,17 +69,31 @@ const Products = () => {
                 ))}
             </div>
             <section>
-    <div className='second'>
-      <ul className='section2'>
-        <li><MdOutlineLocalShipping /><br/>Fast &free <br/>shipping</li>
-        <li><CiShoppingBasket /><br/>Easy to Shop</li>
-        <li><CgSupport /><br/>24/7 Support</li>
-        <li>< MdAssignmentReturn/><br/>Hassle Free <br/> Return</li>
-      </ul>
+  <div class="container">
+    <div class="additional row">
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><MdOutlineLocalShipping /><br/>Fast & free <br/>shipping</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><CiShoppingBasket /><br/>Easy to Shop</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><CgSupport /><br/>24/7 Support</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><MdAssignmentReturn/><br/>Hassle Free <br/> Return</li>
+        </ul>
+      </div>
     </div>
-
-
-   </section>
+  </div>
+</section>
         </div>
     );
 };

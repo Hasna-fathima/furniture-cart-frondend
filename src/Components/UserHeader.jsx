@@ -6,6 +6,10 @@ import furniture1 from '../../images/furniture1.jpg'
 import ProductsByCategory from '../pages/productbycategoris';
 
 function UserHeader() {
+
+  const tokenrelease=()=>{
+    localStorage.removeItem(`token`)
+  }
   return (
     <div className='container'>
       <header>
@@ -36,6 +40,9 @@ function UserHeader() {
                 </li>
                 <li className="nav-item">
                   <Link className="nav-link text-warning-emphasis fs-8" to="/signup">Signup</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link text-warning-emphasis fs-8" onClick={tokenrelease}>SignOut</Link>
                 </li>
               </ul>
             </div>

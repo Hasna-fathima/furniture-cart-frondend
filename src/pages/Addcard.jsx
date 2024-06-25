@@ -13,7 +13,7 @@ const CartService = {
     // Function to fetch product details by productId from backend API
     getProductById: async (productId) => {
         try {
-            const response = await axios.get(`http://localhost:3000/api/user/product/${productId}`);
+            const response = await axios.get(`https://furniture-cart-5.onrender.com/api/user/product/${productId}`);
             if (response.status === 200) {
                 return response.data; // Return product details
             } else {
@@ -28,7 +28,7 @@ const CartService = {
     // Function to add product to cart
     addToCart: async (userId, productId, quantity) => {
         try {
-            const response = await axios.post(`http://localhost:3000/api/user/addcart/${userId}`, {
+            const response = await axios.post(`https://furniture-cart-5.onrender.com/api/user/addcart/${userId}`, {
                 productId,
                 quantity
             });

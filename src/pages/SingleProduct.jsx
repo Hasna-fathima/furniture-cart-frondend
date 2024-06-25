@@ -38,7 +38,7 @@ const SingleProduct = () => {
             }
 
             try {
-                const response = await axios.get(`http://localhost:3000/api/user/product/${Id}`);
+                const response = await axios.get(`https://furniture-cart-5.onrender.com/api/user/product/${Id}`);
                 if (response.status === 200) {
                     setProduct(response.data);
                 } else {
@@ -69,7 +69,7 @@ const SingleProduct = () => {
                 return;
             }
 
-            const addressUrl = "http://localhost:3000/api/user/address";
+            const addressUrl = "https://furniture-cart-5.onrender.com/api/user/address";
             const addressResponse = await axios.post(addressUrl, {
                 userId: userId,
                 address: address
@@ -78,7 +78,7 @@ const SingleProduct = () => {
             console.log('Address saved:', addressResponse.data);
 
             if (addressResponse.status === 201) {
-                const orderUrl = "http://localhost:3000/api/user/order";
+                const orderUrl = "https://furniture-cart-5.onrender.com/api/user/order";
                 const orderData = {
                     userId: userId,
                     addressId: addressResponse.data.address._id,
@@ -119,7 +119,7 @@ const SingleProduct = () => {
             order_id: data.razorpayOrderID,
             handler: async (response) => {
                 try {
-                    const verifyUrl = "http://localhost:3000/api/razorpay/verify";
+                    const verifyUrl = "https://furniture-cart-5.onrender.com/api/razorpay/verify";
                     const { data } = await axios.post(verifyUrl, response);
                     console.log('Payment verification data:', data);
                     navigate('/order-complete');

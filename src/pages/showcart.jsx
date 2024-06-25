@@ -33,7 +33,7 @@ const CartProvider = ({ children }) => {
 
   const fetchCart = async (userId) => {
     try {
-      const response = await axios.get(`http://localhost:3000/api/user/cart/${userId}`);
+      const response = await axios.get(`https://furniture-cart-5.onrender.com/api/user/cart/${userId}`);
       if (response.data) {
         dispatch({ type: 'SET_CART', payload: response.data.cartItems, cartId: response.data._id });
       } else {
@@ -67,7 +67,7 @@ const CartPage = () => {
 
   const handleRemove = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3000/api/user/cart`, { data: { userId, productId } });
+      await axios.delete(`https://furniture-cart-5.onrender.com/api/user/cart`, { data: { userId, productId } });
       dispatch({ type: 'REMOVE_ITEM', payload: { productId } });
     } catch (err) {
       console.error('Failed to remove item:', err);
@@ -76,7 +76,7 @@ const CartPage = () => {
 
   const handleQuantityChange = async (productId, quantity) => {
     try {
-      await axios.patch(`http://localhost:3000/api/user/cart/${cartId}`, { productId, quantity });
+      await axios.patch(`https://furniture-cart-5.onrender.com/api/user/cart/${cartId}`, { productId, quantity });
       dispatch({ type: 'UPDATE_ITEM_QUANTITY', payload: { productId, quantity } });
     } catch (err) {
       console.error('Failed to update quantity:', err);

@@ -20,7 +20,7 @@ const Login = () => {
 
       // Attempt admin login
       try {
-        response = await axios.post('http://localhost:3000/api/user/admin/signin', { email, password });
+        response = await axios.post('https://furniture-cart-5.onrender.com/api/user/admin/signin', { email, password });
         if (response.status === 200 && response.data.user && response.data.user.role === 'admin') {
           console.log('Admin login successful!');
           localStorage.setItem('userId', response.data.userId); // Store admin user ID in localStorage
@@ -33,10 +33,11 @@ const Login = () => {
 
       // Attempt regular user login
       try {
-        response = await axios.post('http://localhost:3000/api/user/signin', { email, password });
+        response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signin', { email, password });
         if (response.status === 200) {
           console.log('User login successful!');
-          localStorage.setItem('userId', response.data.userId); // Store regular user ID in localStorage
+          localStorage.setItem('userId', response.data.userId); 
+          localStorage.setItem('token',response.data.token)
           navigate('/home');
           return;
         } else {

@@ -30,7 +30,7 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3000/api/user/message', formData);
+      const response = await axios.post('https://furniture-cart-5.onrender.com/api/user/message', formData);
       console.log('Message submitted:', response.data);
 
       setFormData({
