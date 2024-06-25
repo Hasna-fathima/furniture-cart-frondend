@@ -1,18 +1,16 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import axios from 'axios'; 
-import '/src/Components/Signup.Login.css';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-
 const UserSignup = () => {
+  const navigate = useNavigate();
 
-  const navigate=useNavigate()
   const initialValues = {
     firstname: '',
     lastname: '',
-    username:'',
+    username: '',
     email: '',
     password: '',
     phoneNumber: ''
@@ -29,22 +27,24 @@ const UserSignup = () => {
 
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
-      // Send form data to backend API
-      const response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signup', values);
+      const response = await axios.post('http://localhost:3000/api/user/signup', values);
 
-      // Handle successful response
-      console.log('Form submitted: ', response.data);
-      navigate('/login')
+      if (response.status === 201) {
+        console.log('User signed up successfully!');
+        const { userId } = response.data;
 
-      // Reset form after successful submission
+        // Store userId in localStorage
+        localStorage.setItem('userId', userId);
+
+        navigate('/login'); // Redirect to login page after successful signup
+      } else {
+        throw new Error('Failed to signup');
+      }
+
       resetForm();
-
-      // Set submitting state to false after form is reset
       setSubmitting(false);
     } catch (error) {
-      // Handle error state if backend call fails
       console.error('Error submitting form: ', error);
-      // You can set an error state and display an error message to the user
     }
   };
 
@@ -66,7 +66,7 @@ const UserSignup = () => {
             <Field type="text" name="lastname" onChange={handleChange} />
             <ErrorMessage className="error" name="lastname" component="div" /><br/>
 
-             <label htmlFor="username">username</label>
+            <label htmlFor="username">Username</label>
             <Field type="text" name="username" onChange={handleChange} />
             <ErrorMessage className="error" name="username" component="div" /><br/>
 
@@ -90,4 +90,4 @@ const UserSignup = () => {
   );
 };
 
-export default UserSignup
+export default UserSignup;

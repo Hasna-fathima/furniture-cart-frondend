@@ -28,7 +28,7 @@ const AdminSignup = () => {
   const handleSubmit = async (values, { resetForm, setSubmitting }) => {
     try {
       // Send form data to backend API
-      const response = await axios.post('https://furniture-cart-5.onrender.com/api/user/admin/signup', values);
+      const response = await axios.post('https://furniture-cart-r17f.onrender.com/api/user/admin/signup', values);
 
       // Handle successful response
       console.log('Form submitted: ', response.data);

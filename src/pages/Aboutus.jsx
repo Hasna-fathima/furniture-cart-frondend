@@ -13,7 +13,7 @@ const AboutUs = () => {
     return (
         <div className="container">
             <div className="contentcontainer">
-                <h3>Discover FurniFlex -<br />Where Innovation Meets Design</h3>
+                <h3>Discover FurnitureCart -<br />Where Innovation Meets Design</h3>
                 <img className="img-fluid mb-4" src={about1} alt="About FurniFlex" />
                 <p>FurnitureCart Challenging</p>
 
@@ -50,17 +50,31 @@ const AboutUs = () => {
                 </div>
             </div>
             <section>
-    <div className='second'>
-      <ul className='section2'>
-        <li><MdOutlineLocalShipping /><br/>Fast &free <br/>shipping</li>
-        <li><CiShoppingBasket /><br/>Easy to Shop</li>
-        <li><CgSupport /><br/>24/7 Support</li>
-        <li>< MdAssignmentReturn/><br/>Hassle Free <br/> Return</li>
-      </ul>
+  <div class="container">
+    <div class="additional row">
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><MdOutlineLocalShipping /><br/>Fast & free <br/>shipping</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><CiShoppingBasket /><br/>Easy to Shop</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><CgSupport /><br/>24/7 Support</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><MdAssignmentReturn/><br/>Hassle Free <br/> Return</li>
+        </ul>
+      </div>
     </div>
-
-
-   </section>
+  </div>
+</section>
         </div>
     );
 }

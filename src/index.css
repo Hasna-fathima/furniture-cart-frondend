@@ -155,6 +155,9 @@ body{
   margin: auto;
   color: white;
 }
+.home p{
+    color: white;
+}
 .aboutimage{
         width: 100%;
         max-width: 900px;
@@ -254,8 +257,9 @@ body{
 @media (min-width: 769px) {
   .home {
       flex-direction: row;
+      
   }
-
+ 
   .contentcontainer, .imagecontainer {
       padding: 20px;
   }
@@ -322,6 +326,15 @@ body{
   
   .icon{
     padding: 1rem;
+  }
+
+
+  .heading{
+    text-align:center;
+    color:rgba(134, 83, 49, 0.9) ;
+  }
+  .additional{
+    color:rgba(134, 83, 49, 0.9) ;
   }
  
  

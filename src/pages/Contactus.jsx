@@ -5,6 +5,11 @@ import { FaPhoneVolume, FaFax } from "react-icons/fa";
 import { PiBuildingOfficeDuotone } from "react-icons/pi";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import { MdOutlineLocalShipping } from "react-icons/md";
+import { CgSupport } from "react-icons/cg";
+import { CiShoppingBasket } from "react-icons/ci";
+import { MdAssignmentReturn } from "react-icons/md";
+import Topcategories from '../pages/Topcategories';
 
 function ContactUs() {
   const [formData, setFormData] = useState({
@@ -25,7 +30,7 @@ function ContactUs() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://furniture-cart-5.onrender.com/api/user/message', formData);
+      const response = await axios.post('http://localhost:3000/api/user/message', formData);
       console.log('Message submitted:', response.data);
 
       setFormData({
@@ -80,6 +85,34 @@ function ContactUs() {
           </div>
         </div>
       </div>
+
+
+      <section>
+  <div class="container">
+    <div class="additional row">
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><MdOutlineLocalShipping /><br/>Fast & free <br/>shipping</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><CiShoppingBasket /><br/>Easy to Shop</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><CgSupport /><br/>24/7 Support</li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="list-unstyled section2">
+          <li class="text-center"><MdAssignmentReturn/><br/>Hassle Free <br/> Return</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
     </div>
   );
 }

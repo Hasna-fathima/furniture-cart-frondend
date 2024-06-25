@@ -14,28 +14,30 @@ const Login = () => {
 
   const handleLogin = async (values, { setSubmitting, setFieldError }) => {
     const { email, password } = values;
-  
+
     try {
       let response;
-  
-      // Try admin login
+
+      // Attempt admin login
       try {
-        response = await axios.post('https://furniture-cart-5.onrender.com/api/user/admin/signin', { email, password });
-        if (response.status === 200 && response.data.user.role === 'admin') {
+        response = await axios.post('http://localhost:3000/api/user/admin/signin', { email, password });
+        if (response.status === 200 && response.data.user && response.data.user.role === 'admin') {
           console.log('Admin login successful!');
+          localStorage.setItem('userId', response.data.userId); // Store admin user ID in localStorage
           navigate('/admin/home');
           return;
         }
       } catch (adminError) {
         console.log('Admin login failed, trying user login');
       }
-  
-      // Try user login
+
+      // Attempt regular user login
       try {
-        response = await axios.post('https://furniture-cart-5.onrender.com/api/user/signin', { email, password });
+        response = await axios.post('http://localhost:3000/api/user/signin', { email, password });
         if (response.status === 200) {
           console.log('User login successful!');
-          navigate('/');
+          localStorage.setItem('userId', response.data.userId); // Store regular user ID in localStorage
+          navigate('/home');
           return;
         } else {
           throw new Error('Invalid login credentials');
@@ -52,8 +54,6 @@ const Login = () => {
       setSubmitting(false);
     }
   };
-  
-  
 
   return (
     <div className='container'>

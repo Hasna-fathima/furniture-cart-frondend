@@ -10,11 +10,15 @@ import LoginForm from './Components/AdminLogin';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Products from "./pages/products";
-import SingleProduct from './pages/SingleProduct'
+import SingleProduct from "./pages/singleProduct";
 import Topcategories from "./pages/Topcategories";
 import AboutUs from "./pages/Aboutus";
-import Contactus from './pages/Contactus'
-import ProductsByCategory from './pages/productbycategoris'
+import ContactUs from "./pages/Contactus";
+import ProductsByCategory from '../src/pages/productbycategoris'
+import  OrderPage from "./pages/Order";
+import Ordercompletepage from "./pages/ordercompletepage";
+import ShowCartPage from "./pages/showcart";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -27,7 +31,7 @@ const router = createBrowserRouter([
         element: <LoginForm />
       },
       {
-        path: "/",
+        path: "home",
         element: <Home />
       },
       {
@@ -52,11 +56,23 @@ const router = createBrowserRouter([
       },
       {
         path:"contact",
-        element:<Contactus/>
+        element:<ContactUs/>
       },
       {
-        path:'productbycategory',
+        path:'products/:category',
         element:<ProductsByCategory/>
+      },
+      {
+        path:'order',
+        element:<OrderPage/>
+      },
+      {
+        path:'ordercomplete',
+        element:<Ordercompletepage/>
+      },
+      {
+        path:'/showcart',
+        element:<ShowCartPage/>
       }
     
     ]
