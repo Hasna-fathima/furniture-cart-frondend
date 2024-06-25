@@ -10,7 +10,7 @@ function ProductsByCategory() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`https://furniture-cart-5.onrender.com/user/products?category=${category}`);
+        const response = await axios.get(`https://furniture-cart-5.onrender.com/api/user/products?category=${category}`);
         setProducts(response.data);
       } catch (error) {
         console.error('Error fetching products:', error);
