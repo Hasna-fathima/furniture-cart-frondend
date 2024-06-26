@@ -17,7 +17,7 @@ import ProductsByCategory from "./pages/productbycategoris.jsx";
 import OrderPage from "./pages/Order.jsx";
 import OrderCompletePage from "./pages/ordercompletepage.jsx";
 import ShowCartPage from "./pages/showcart.jsx";
-import SingleProduct from './pages/singleProduct.jsx'
+import SingleProduct from './pages/SingleProduct.jsx'
 
 const router = createBrowserRouter([
   {

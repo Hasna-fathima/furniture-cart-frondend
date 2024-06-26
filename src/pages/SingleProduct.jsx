@@ -5,7 +5,8 @@ import { MdOutlineLocalShipping, MdAssignmentReturn } from "react-icons/md";
 import { CgSupport } from "react-icons/cg";
 import { CiShoppingBasket } from "react-icons/ci";
 import { useNavigate } from 'react-router-dom';
-import   CartService from '../pages/Addcard'
+import   CartService from './Addcard'
+import razorpay from 'razorpay'
 
 const SingleProduct = () => {
        const navigate=useNavigate()
@@ -140,7 +141,7 @@ const SingleProduct = () => {
     const handleAddToCart = async () => {
         try {
             const userId = CartService.getUserId();
-            const response = await CartService.addToCart(userId, product._id, 1); // Add product to cart with quantity 1
+            const response = await CartService.addToCart(userId, product._id, 1);
             console.log('Product added to cart:', response);
         } catch (error) {
             console.error('Failed to add product to cart:', error);
@@ -308,6 +309,7 @@ const SingleProduct = () => {
 </section>
 </div>
     )
-}
+};
+
 export default SingleProduct
 
