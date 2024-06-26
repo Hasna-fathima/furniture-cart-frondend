@@ -10,7 +10,6 @@ import LoginForm from './Components/AdminLogin';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Products from "./pages/Products";
-import SingleProduct from "./pages/SingleProduct";  // Check this line
 import Topcategories from "./pages/Topcategories";
 import AboutUs from "./pages/Aboutus";
 import ContactUs from "./pages/Contactus";
@@ -18,6 +17,7 @@ import ProductsByCategory from "./pages/ProductsByCategory";
 import OrderPage from "./pages/Order";
 import OrderCompletePage from "./pages/OrderCompletePage";
 import ShowCartPage from "./pages/ShowCart";
+import SingleProduct from './pages/singleProduct.jsx'
 
 const router = createBrowserRouter([
   {
