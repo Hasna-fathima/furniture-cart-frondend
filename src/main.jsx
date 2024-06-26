@@ -9,7 +9,7 @@ import AdminSignup from './Components/AdminSignup';
 import LoginForm from './Components/AdminLogin';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Products from "./pages/Products";
+import Products from './pages/products.jsx'
 import Topcategories from "./pages/Topcategories";
 import AboutUs from "./pages/Aboutus";
 import ContactUs from "./pages/Contactus";
