@@ -2,17 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css"; 
-import AdminLayout from './Layout/AdminLayout';
-import UserLayout from './Layout/UserLayout';
-import UserSignup from './Components/UserSignup';
-import AdminSignup from './Components/AdminSignup';
-import LoginForm from './Components/AdminLogin';
-import Home from './pages/Home';
-import NotFound from './pages/NotFound';
+import AdminLayout from './Layout/AdminLayout.jsx';
+import UserLayout from './Layout/UserLayout.jsx'
+import UserSignup from './Components/UserSignup.jsx';
+import AdminSignup from './Components/AdminSignup.jsx';
+import LoginForm from './Components/AdminLogin.jsx';
+import Home from './pages/Home.jsx'
+import NotFound from './pages/NotFound.jsx';
 import Products from './pages/products.jsx'
 import Topcategories from "./pages/Topcategories.jsx";
-import AboutUs from "./pages/Aboutus";
-import ContactUs from "./pages/Contactus";
+import AboutUs from "./pages/Aboutus.jsx";
+import ContactUs from "./pages/Contactus.jsx";
 import ProductsByCategory from "./pages/productbycategoris.jsx";
 import OrderPage from "./pages/Order.jsx";
 import OrderCompletePage from "./pages/ordercompletepage.jsx";
