@@ -9,15 +9,15 @@ import AdminSignup from './Components/AdminSignup';
 import LoginForm from './Components/AdminLogin';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
-import Products from "./pages/products";
-import SingleProduct from "./pages/singleProduct";
+import Products from "./pages/Products";
+import SingleProduct from "./pages/SingleProduct";  // Check this line
 import Topcategories from "./pages/Topcategories";
 import AboutUs from "./pages/Aboutus";
 import ContactUs from "./pages/Contactus";
-import ProductsByCategory from '../src/pages/productbycategoris'
+import ProductsByCategory from "./pages/ProductsByCategory";
 import OrderPage from "./pages/Order";
-import Ordercompletepage from "./pages/ordercompletepage";
-import ShowCartPage from "./pages/showcart";
+import OrderCompletePage from "./pages/OrderCompletePage";
+import ShowCartPage from "./pages/ShowCart";
 
 const router = createBrowserRouter([
   {
@@ -68,14 +68,14 @@ const router = createBrowserRouter([
       },
       {
         path:'ordercomplete',
-        element:<Ordercompletepage/>
+        element:<OrderCompletePage/>
       },
       {
-        path:'/showcart',
+        path:'showcart',
         element:<ShowCartPage/>
       }
     
-    ]
+    ],
   },
   {
     path: "/admin",
